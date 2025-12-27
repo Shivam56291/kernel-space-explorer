@@ -1,92 +1,82 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/MariaLetta/free-gophers-pack/master/characters/png/tux.png" width="150" alt="Linux Gopher">
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png" width="120" alt="Linux Tux">
 
-# 🐧 Linux System Programming & Kernel
+<br/>
 
 <a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=24&pause=1000&color=FCC624&center=true&vCenter=true&width=600&lines=Mastering+System+Calls;Exploring+Kernel+Space+vs+User+Space;Process+Lifecycle+%26+Memory+Layout;Multi-threading+%26+IPC+Mechanisms" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=24&pause=1000&color=FCC624&center=true&vCenter=true&width=600&lines=sudo+apt-get+install+knowledge;Mastering+System+Calls;Navigating+Kernel+Mode;Inter-Process+Communication;POSIX+Threads+Synchronization" alt="Typing SVG" />
 </a>
 
 <br/>
 
-![Linux](https://img.shields.io/badge/Linux-Kernel-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-![C](https://img.shields.io/badge/C-Language-A8B9CC?style=for-the-badge&logo=c&logoColor=white)
-![POSIX](https://img.shields.io/badge/Standard-POSIX-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
-![Bash](https://img.shields.io/badge/Shell-Bash-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white)
-
-<br/>
-
-<a href="#-the-philosophy"><strong>The Why</strong></a> · <a href="#-learning-pathway"><strong>Pathway</strong></a> · <a href="#-tech-stack"><strong>Tools</strong></a>
+![Linux](https://img.shields.io/badge/Linux-Kernel_v5.x+-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![C](https://img.shields.io/badge/C-System_Programming-A8B9CC?style=for-the-badge&logo=c&logoColor=white)
+![Glibc](https://img.shields.io/badge/Glibc-Library-004482?style=for-the-badge&logo=gnu&logoColor=white)
+![Bash](https://img.shields.io/badge/Shell-Automation-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white)
 
 </div>
 
 ---
 
-### 🛡️ The Philosophy: Why System Programming?
+### 🛡️ The Mission
 
-Every CS student should master Linux System Programming because it is the **bridge between Hardware and Software**. Understanding the kernel isn't just about code—it's about understanding how the digital world _actually_ functions.
-
-> "If you don't understand system calls and memory management, you are just writing code; when you understand the kernel, you are building systems."
+> **"Operating Systems are the baseline of reality for software."**
+> This repository documents a deep-dive into the Linux Kernel and System Programming. From the raw efficiency of C to the complex orchestration of the Kernel, I am exploring how hardware is tamed by code.
 
 ---
 
-### 🗺️ Learning Roadmap
+### 🗺️ System Engineering Roadmap
 
-I am documenting my progress through the core pillars of the Linux environment, moving from basic File I/O to complex Inter-Process Communication.
+I am building my understanding of the OS layer by layer.
+
+| Layer           | Core Pillars                                 | Implementation                    |
+| :-------------- | :------------------------------------------- | :-------------------------------- |
+| **📁 File I/O** | File Descriptors, Atomicity, Race Conditions | `open()`, `read()`, `write()`     |
+| **🏗️ Process**  | Lifecycle, Memory Layout, Virtual Memory     | `fork()`, `exec()`, `wait()`      |
+| **📡 Signals**  | Asynchronous Events, Signal Handlers         | `SIGKILL`, `SIGUSR`, `trap`       |
+| **🧵 Threads**  | Pthreads, Mutex, Condition Variables         | `pthread_create()`, `sync`        |
+| **🔌 IPC**      | Pipes, FIFOs, Shared Memory, Semaphores      | `msgget()`, `shmget()`, `semop()` |
+
+---
+
+### 🔍 Deep Dive Visualization
+
+Understanding the boundary **Kernel Space**.
 
 <div align="center">
-
-| Module           | Core Concepts                                   | Practice Focus                          |
-| :--------------- | :---------------------------------------------- | :-------------------------------------- |
-| **📁 File I/O**  | `open()`, `read()`, `write()`, `lseek()`        | Low-level file manipulation & Atomicity |
-| **🏗️ Processes** | `fork()`, `exec()`, `wait()`, `Zombie/Orphan`   | Lifecycle management & Memory Layout    |
-| **🧠 Memory**    | Virtual Memory, Page Tables, `malloc` internals | Managing Process Address Space          |
-| **📡 Signals**   | `SIGKILL`, `SIGUSR`, Signal Handlers            | Asynchronous event communication        |
-| **🧵 Threads**   | `Pthreads`, Mutex, Condition Variables          | Concurrency & Race Condition resolution |
-| **🔌 IPC**       | `Pipes`, `FIFOs`, `Shared Memory`, `Semaphores` | Cross-process data synchronization      |
-
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Simplified_Structure_of_the_Linux_Kernel.svg/2560px-Simplified_Structure_of_the_Linux_Kernel.svg.png" width="80%" alt="Kernel Architecture">
 </div>
 
 ---
 
-### 🔍 Deep Dive: The Big Picture
-
-During this phase, I focus on:
-
-- **Atomicity & Race Conditions:** Learning why execution order matters in multi-tasking environments.
-- **File Descriptors:** Mastering the internal tables that Linux uses to track every open resource.
-- **The Execution Bridge:** Moving smoothly between **User Mode** (Safety) and **Kernel Mode** (Power).
-
----
-
-### 🛠️ Tech Stack & Lab Tools
+### 🛠️ Lab Environment
 
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=linux,c,bash,vim,vscode,git" />
+  <img src="https://skillicons.dev/icons?i=linux,c,vim,bash,git" />
 </div>
 
 ---
 
-### ⚡ Hands-on Execution
+### ⚡ Execution Commands
 
 ```bash
-# 1. Compile System Programs (using GCC)
-gcc -o my_process main.c -lpthread
+# Compile with system libraries
+gcc -Wall -o lab_output main.c -lpthread
 
-# 2. Trace System Calls
-strace ./my_process
+# Trace every system call made by the program
+strace ./lab_output
 
-# 3. Monitor Process States
-htop
+# Check for memory leaks in Kernel allocations
+valgrind ./lab_output
 ```
 
 <div align="center">
 
-Author: Shivam
+Author: Shivam | Kernel Enthusiast & Systems Engineer
 
-<p>Diving deep into the stack.</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Tux_Linux_mascotte_with_beak_upward_-_Milano_2022.jpg/640px-Tux_Linux_mascotte_with_beak_upward_-_Milano_2022.jpg" width="200"  alt="Linux Foundation">
 
-<img src="https://www.google.com/search?q=https://raw.githubusercontent.com/MariaLetta/free-gophers-pack/master/characters/png/2.png" width="60">
+"Talk is cheap. Show me the code." — Linus Torvalds 🐧
 
 </div>
